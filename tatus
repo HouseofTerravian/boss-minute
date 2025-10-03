@@ -1,0 +1,124 @@
+[33mcommit c5f1c75f851bea4f55b3738945581aa1c5329386[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Author: House of Terravian <houseofterravian@proton.me>
+Date:   2025-10-02 04:11:48 -0500
+
+    chore: initial commit — Boss Minute (PostHog-ready)
+
+ .gitignore | 3 [32m+++[m
+ 1 file changed, 3 insertions(+)
+
+[33mcommit 78305a8afe0cf5806231244927f72529f9db80cb[m
+Author: House of Terravian <houseofterravian@proton.me>
+Date:   2025-09-29 23:14:26 -0500
+
+    feat: Boss Minute initial deploy-ready
+
+ (                                                  |      0
+ (obj[k]                                            |      0
+ ({                                                 |      0
+ README.md                                          |      3 [32m+[m
+ [it.ref                                            |      0
+ b.revenue                                          |      0
+ getSiteOrigin()                                    |      0
+ index.html                                         |     12 [32m+[m
+ netlify.toml                                       |      6 [32m+[m
+ netlify/functions/subscribe.js                     |      1 [32m+[m
+ node_modules/.bin/autoprefixer                     |     16 [32m+[m
+ node_modules/.bin/autoprefixer.cmd                 |     17 [32m+[m
+ node_modules/.bin/autoprefixer.ps1                 |     28 [32m+[m
+ node_modules/.bin/baseline-browser-mapping         |     16 [32m+[m
+ node_modules/.bin/baseline-browser-mapping.cmd     |     17 [32m+[m
+ node_modules/.bin/baseline-browser-mapping.ps1     |     28 [32m+[m
+ node_modules/.bin/browserslist                     |     16 [32m+[m
+ node_modules/.bin/browserslist.cmd                 |     17 [32m+[m
+ node_modules/.bin/browserslist.ps1                 |     28 [32m+[m
+ node_modules/.bin/cssesc                           |     16 [32m+[m
+ node_modules/.bin/cssesc.cmd                       |     17 [32m+[m
+ node_modules/.bin/cssesc.ps1                       |     28 [32m+[m
+ node_modules/.bin/esbuild                          |     16 [32m+[m
+ node_modules/.bin/esbuild.cmd                      |     17 [32m+[m
+ node_modules/.bin/esbuild.ps1                      |     28 [32m+[m
+ node_modules/.bin/glob                             |     16 [32m+[m
+ node_modules/.bin/glob.cmd                         |     17 [32m+[m
+ node_modules/.bin/glob.ps1                         |     28 [32m+[m
+ node_modules/.bin/jiti                             |     16 [32m+[m
+ node_modules/.bin/jiti.cmd                         |     17 [32m+[m
+ node_modules/.bin/jiti.ps1                         |     28 [32m+[m
+ node_modules/.bin/jsesc                            |     16 [32m+[m
+ node_modules/.bin/jsesc.cmd                        |     17 [32m+[m
+ node_modules/.bin/jsesc.ps1                        |     28 [32m+[m
+ node_modules/.bin/json5                            |     16 [32m+[m
+ node_modules/.bin/json5.cmd                        |     17 [32m+[m
+ node_modules/.bin/json5.ps1                        |     28 [32m+[m
+ node_modules/.bin/loose-envify                     |     16 [32m+[m
+ node_modules/.bin/loose-envify.cmd                 |     17 [32m+[m
+ node_modules/.bin/loose-envify.ps1                 |     28 [32m+[m
+ node_modules/.bin/nanoid                           |     16 [32m+[m
+ node_modules/.bin/nanoid.cmd                       |     17 [32m+[m
+ node_modules/.bin/nanoid.ps1                       |     28 [32m+[m
+ node_modules/.bin/node-which                       |     16 [32m+[m
+ node_modules/.bin/node-which.cmd                   |     17 [32m+[m
+ node_modules/.bin/node-which.ps1                   |     28 [32m+[m
+ node_modules/.bin/parser                           |     16 [32m+[m
+ node_modules/.bin/parser.cmd                       |     17 [32m+[m
+ node_modules/.bin/parser.ps1                       |     28 [32m+[m
+ node_modules/.bin/resolve                          |     16 [32m+[m
+ node_modules/.bin/resolve.cmd                      |     17 [32m+[m
+ node_modules/.bin/resolve.ps1                      |     28 [32m+[m
+ node_modules/.bin/rollup                           |     16 [32m+[m
+ node_modules/.bin/rollup.cmd                       |     17 [32m+[m
+ node_modules/.bin/rollup.ps1                       |     28 [32m+[m
+ node_modules/.bin/semver                           |     16 [32m+[m
+ node_modules/.bin/semver.cmd                       |     17 [32m+[m
+ node_modules/.bin/semver.ps1                       |     28 [32m+[m
+ node_modules/.bin/sucrase                          |     16 [32m+[m
+ node_modules/.bin/sucrase-node                     |     16 [32m+[m
+ node_modules/.bin/sucrase-node.cmd                 |     17 [32m+[m
+ node_modules/.bin/sucrase-node.ps1                 |     28 [32m+[m
+ node_modules/.bin/sucrase.cmd                      |     17 [32m+[m
+ node_modules/.bin/sucrase.ps1                      |     28 [32m+[m
+ node_modules/.bin/tailwind                         |     16 [32m+[m
+ node_modules/.bin/tailwind.cmd                     |     17 [32m+[m
+ node_modules/.bin/tailwind.ps1                     |     28 [32m+[m
+ node_modules/.bin/tailwindcss                      |     16 [32m+[m
+ node_modules/.bin/tailwindcss.cmd                  |     17 [32m+[m
+ node_modules/.bin/tailwindcss.ps1                  |     28 [32m+[m
+ node_modules/.bin/tsc                              |     16 [32m+[m
+ node_modules/.bin/tsc.cmd                          |     17 [32m+[m
+ node_modules/.bin/tsc.ps1                          |     28 [32m+[m
+ node_modules/.bin/tsserver                         |     16 [32m+[m
+ node_modules/.bin/tsserver.cmd                     |     17 [32m+[m
+ node_modules/.bin/tsserver.ps1                     |     28 [32m+[m
+ node_modules/.bin/update-browserslist-db           |     16 [32m+[m
+ node_modules/.bin/update-browserslist-db.cmd       |     17 [32m+[m
+ node_modules/.bin/update-browserslist-db.ps1       |     28 [32m+[m
+ node_modules/.bin/vite                             |     16 [32m+[m
+ node_modules/.bin/vite.cmd                         |     17 [32m+[m
+ node_modules/.bin/vite.ps1                         |     28 [32m+[m
+ node_modules/.bin/yaml                             |     16 [32m+[m
+ node_modules/.bin/yaml.cmd                         |     17 [32m+[m
+ node_modules/.bin/yaml.ps1                         |     28 [32m+[m
+ node_modules/.package-lock.json                    |   2432 [32m+[m
+ node_modules/.vite/deps/_metadata.json             |     52 [32m+[m
+ node_modules/.vite/deps/chunk-2YIMICFJ.js          |   1935 [32m+[m
+ node_modules/.vite/deps/chunk-2YIMICFJ.js.map      |      7 [32m+[m
+ node_modules/.vite/deps/chunk-BCXODTBQ.js          |  21626 [32m++[m
+ node_modules/.vite/deps/chunk-BCXODTBQ.js.map      |      7 [32m+[m
+ node_modules/.vite/deps/lucide-react.js            |  34675 [32m+++[m
+ node_modules/.vite/deps/lucide-react.js.map        |      7 [32m+[m
+ node_modules/.vite/deps/package.json               |      3 [32m+[m
+ node_modules/.vite/deps/react-dom.js               |      6 [32m+[m
+ node_modules/.vite/deps/react-dom.js.map           |      7 [32m+[m
+ node_modules/.vite/deps/react-dom_client.js        |     38 [32m+[m
+ node_modules/.vite/deps/react-dom_client.js.map    |      7 [32m+[m
+ node_modules/.vite/deps/react.js                   |      5 [32m+[m
+ node_modules/.vite/deps/react.js.map               |      7 [32m+[m
+ node_modules/.vite/deps/react_jsx-dev-runtime.js   |    911 [32m+[m
+ .../.vite/deps/react_jsx-dev-runtime.js.map        |      7 [32m+[m
+ node_modules/.vite/deps/react_jsx-runtime.js       |    923 [32m+[m
+ node_modules/.vite/deps/react_jsx-runtime.js.map   |      7 [32m+[m
+ node_modules/@alloc/quick-lru/index.d.ts           |    128 [32m+[m
+ node_modules/@alloc/quick-lru/index.js             |    263 [32m+[m
+ node_modules/@alloc/quick-lru/license              |      9 [32m+[m
+ node_modules/@alloc/quick-lru/package.json         |     43 [32m+[m
+ node_modules/@alloc/quick-lru/readme.md            |    139 [
