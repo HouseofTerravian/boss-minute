@@ -1,1 +1,8 @@
-https://bossminute.com/*  https://www.thebossminute.com/:splat  301!
+# 1️⃣ Force HTTPS + WWW (catch-all)
+http://bossminute.com/*          https://www.thebossminute.com/:splat  301!
+https://bossminute.com/*         https://www.thebossminute.com/:splat  301!
+
+# 2️⃣ Optional: clean up legacy apex of "thebossminute" too
+http://thebossminute.com/*       https://www.thebossminute.com/:splat  301!
+https://thebossminute.com/*      https://www.thebossminute.com/:splat  301!
+
