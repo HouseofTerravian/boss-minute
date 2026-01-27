@@ -1,3 +1,3 @@
-# Boss Minute PostHog Project
+# Boss Minute
 
 Full source ready for Netlify deploy.
