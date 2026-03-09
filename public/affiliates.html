@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Affiliate Program — The Boss Minute</title>
+  <meta name="description" content="Earn recurring commissions by referring executives and leaders to The Boss Minute.">
+  <link rel="icon" href="/favicon.ico">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #000;
+      color: rgba(255,255,255,0.85);
+      min-height: 100vh;
+      line-height: 1.7;
+    }
+    a { color: rgba(255,255,255,0.6); text-decoration: underline; text-underline-offset: 3px; transition: color 0.2s; }
+    a:hover { color: #fff; }
+    .nav {
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-brand { font-weight: 700; font-size: 0.9375rem; color: #fff; text-decoration: none; }
+    .nav-back { font-size: 0.8125rem; color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }
+    .nav-back:hover { color: #fff; }
+    .page { max-width: 720px; margin: 0 auto; padding: 3rem 1.5rem 6rem; }
+    .label { font-size: 0.625rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 0.875rem; }
+    h1 { font-size: clamp(1.75rem, 5vw, 2.5rem); font-weight: 700; color: #fff; margin-bottom: 0.5rem; line-height: 1.1; }
+    .subtitle { font-size: 1rem; color: rgba(255,255,255,0.55); margin-bottom: 3rem; padding-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    h2 { font-size: 1.125rem; font-weight: 600; color: #fff; margin-top: 2.5rem; margin-bottom: 0.75rem; }
+    p { font-size: 0.9375rem; color: rgba(255,255,255,0.7); margin-bottom: 1rem; }
+    p:last-child { margin-bottom: 0; }
+    ul { margin-bottom: 1rem; padding-left: 0; list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+    li { font-size: 0.9375rem; color: rgba(255,255,255,0.7); padding-left: 1.25rem; position: relative; }
+    li::before { content: '·'; position: absolute; left: 0.375rem; color: rgba(255,255,255,0.3); }
+    strong { color: rgba(255,255,255,0.9); font-weight: 600; }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+    @media (max-width: 540px) { .stat-grid { grid-template-columns: 1fr; } }
+    .stat-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      padding: 1.25rem;
+      text-align: center;
+    }
+    .stat-value {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1;
+      margin-bottom: 0.375rem;
+    }
+    .stat-label {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.4);
+      letter-spacing: 0.04em;
+    }
+
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    .step {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+    .step-num {
+      flex-shrink: 0;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.5);
+      margin-top: 0.125rem;
+    }
+    .step-body { flex: 1; }
+    .step-title { font-size: 0.9375rem; font-weight: 600; color: rgba(255,255,255,0.9); margin-bottom: 0.25rem; }
+    .step-desc { font-size: 0.875rem; color: rgba(255,255,255,0.5); margin: 0; }
+
+    .divider { border: none; border-top: 1px solid rgba(255,255,255,0.08); margin: 2.5rem 0; }
+
+    .cta-block {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 14px;
+      padding: 2rem;
+      text-align: center;
+      margin-top: 2.5rem;
+    }
+    .cta-block p { color: rgba(255,255,255,0.55); font-size: 0.9375rem; margin-bottom: 1.25rem; }
+    .cta-btn {
+      display: inline-block;
+      background: #fff;
+      color: #000;
+      font-size: 0.875rem;
+      font-weight: 600;
+      padding: 0.75rem 1.75rem;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .cta-btn:hover { opacity: 0.88; color: #000; text-decoration: none; }
+
+    footer { border-top: 1px solid rgba(255,255,255,0.08); padding: 1.5rem; text-align: center; font-size: 0.75rem; color: rgba(255,255,255,0.3); }
+    footer nav { margin-top: 0.5rem; display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
+    footer a { color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s; }
+    footer a:hover { color: rgba(255,255,255,0.8); }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="/" class="nav-brand">⬛ The Boss Minute</a>
+    <a href="/" class="nav-back">← Back</a>
+  </nav>
+
+  <div class="page">
+    <p class="label">Partners</p>
+    <h1>Affiliate Program</h1>
+    <p class="subtitle">Refer executives, leaders, and high performers to The Boss Minute — earn recurring commissions on every active subscription you bring in.</p>
+
+    <div class="stat-grid">
+      <div class="stat-card">
+        <p class="stat-value">30%</p>
+        <p class="stat-label">Recurring commission</p>
+      </div>
+      <div class="stat-card">
+        <p class="stat-value">365</p>
+        <p class="stat-label">Day cookie window</p>
+      </div>
+      <div class="stat-card">
+        <p class="stat-value">Monthly</p>
+        <p class="stat-label">Payout schedule</p>
+      </div>
+    </div>
+
+    <h2>How It Works</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <p class="step-title">Apply</p>
+          <p class="step-desc">Email us with a brief note about your audience. We approve affiliates on a rolling basis.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <p class="step-title">Get your link</p>
+          <p class="step-desc">You'll receive a unique referral URL with a 365-day attribution window.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <p class="step-title">Share</p>
+          <p class="step-desc">Promote The Boss Minute to your audience however you see fit — newsletter, social, podcast, or 1-on-1.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-body">
+          <p class="step-title">Earn</p>
+          <p class="step-desc">Collect 30% recurring commission for every month your referred subscribers remain active.</p>
+        </div>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <h2>Program Details</h2>
+    <ul>
+      <li><strong>Commission rate:</strong> 30% of each referred subscriber's monthly payment</li>
+      <li><strong>Recurring:</strong> commissions continue as long as the subscriber stays active</li>
+      <li><strong>Cookie window:</strong> 365 days from first click</li>
+      <li><strong>Minimum payout:</strong> $25 — unpaid balances roll to the next cycle</li>
+      <li><strong>Payment method:</strong> PayPal or bank transfer (US-based affiliates); details confirmed on approval</li>
+      <li><strong>Approved niches:</strong> leadership, executive productivity, business coaching, professional development, performance optimization</li>
+    </ul>
+
+    <h2>Who We're Looking For</h2>
+    <p>We partner with newsletter writers, coaches, podcasters, and content creators whose audiences include working professionals, managers, and leaders. You don't need a large following — relevance matters more than reach.</p>
+
+    <hr class="divider">
+
+    <h2>Disclosure Requirements</h2>
+    <p>Affiliates are required to clearly disclose their referral relationship with The Boss Minute in compliance with FTC guidelines. When promoting The Boss Minute, you must include a disclosure such as: <em>"This is an affiliate link. I may earn a commission if you subscribe."</em></p>
+
+    <div class="cta-block">
+      <p>Ready to apply? Send us a short note about your audience and how you plan to promote The Boss Minute.</p>
+      <a href="mailto:forbiddengnosis@mcmenterprisesllc.com?subject=Affiliate%20Program%20Application" class="cta-btn">Apply Now</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2026 The Boss Minute / House of Terravian. All Rights Reserved.</p>
+    <nav>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+      <a href="/contact.html">Contact</a>
+      <a href="/affiliates.html">Affiliates</a>
+    </nav>
+  </footer>
+
+</body>
+</html>

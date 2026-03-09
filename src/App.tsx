@@ -261,38 +261,10 @@ export default function BossMinutePostHog() {
           <p className="text-white/60">© {new Date().getFullYear()} The Boss Minute — All Rights Reserved</p>
           
                     <div className="flex items-center gap-6 text-white/60">
-          <a
-            href="/docs/bossminute-privacy-2025-09-21.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-white"
-          >
-            Privacy
-          </a>
-          <a
-            href="/docs/bossminute-terms-2025-09-21.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-white"
-          >
-            Terms
-          </a>
-          <a
-            href="/docs/bossminute-contact-2025-09-21.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-white"
-          >
-            Contact
-          </a>
-          <a
-            href="/docs/bossminute-affiliates-2025-09-21.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-white"
-          >
-            Affiliates
-          </a>
+          <a href="/privacy.html" className="hover:text-white">Privacy</a>
+          <a href="/terms.html" className="hover:text-white">Terms</a>
+          <a href="/contact.html" className="hover:text-white">Contact</a>
+          <a href="/affiliates.html" className="hover:text-white">Affiliates</a>
         </div>
       </div>
       <p className="mt-2 text-center text-xs text-white/60">
