@@ -141,7 +141,6 @@ export default function BossMinutePostHog() {
 
   const fmtMonth = (usd: number) => `${SYMBOL[currency]}${Math.round(usd * (RATES[currency] || 1))}`;
 
-  // Mocked submit for preview (no network). In prod, POST /api/subscribe with attribution.
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (!email) return;
@@ -149,10 +148,19 @@ export default function BossMinutePostHog() {
     const attr = readAttribution();
     try {
       setStatus('sending');
-      pgCapture('Send Test Email Clicked', { variant: v, currency, ...attr });
-      await new Promise(r => setTimeout(r, 800));
+      pgCapture('Subscribe Clicked', { variant: v, currency, ...attr });
+      const res = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email,
+          website: '',         // honeypot — always empty from real users
+          variant: v,
+          ref_source: attr.ref_source || attr.utm_source || undefined,
+        }),
+      });
+      if (!res.ok) throw new Error('subscribe failed');
       setStatus('ok');
-      // Optional thank-you route in prod: window.location.href = '/thank-you';
     } catch {
       setStatus('err');
     }
@@ -217,9 +225,11 @@ export default function BossMinutePostHog() {
             </ul>
 
             <form onSubmit={handleSubmit} className="mt-6 flex gap-2 rounded-2xl border border-white/10 bg-white/5 p-2">
+              {/* Honeypot — hidden from real users, bots fill it in */}
+              <input type="text" name="website" autoComplete="off" tabIndex={-1} aria-hidden="true" style={{display:'none'}} />
               <input type="email" required value={email} onChange={e=>setEmail(e.target.value)} placeholder="Work email" className="h-11 w-full rounded-xl bg-transparent px-4 text-white placeholder-white/40 outline-none" />
-              <button type="submit" className="inline-flex h-11 items-center rounded-xl bg-white px-4 font-semibold text-black disabled:opacity-60">
-                {status==='sending'? 'Sending…' : 'Send Test Email'}
+              <button type="submit" disabled={status==='sending'} className="inline-flex h-11 items-center rounded-xl bg-white px-4 font-semibold text-black disabled:opacity-60">
+                {status==='sending' ? 'Sending…' : 'Get My First Issue'}
               </button>
             </form>
             {status==='ok' && (
