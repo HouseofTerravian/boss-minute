@@ -240,10 +240,7 @@ export default function BossMinutePostHog() {
             )}
             {status==='err' && <p className="mt-2 text-xs text-rose-400">We couldn’t send just now. Try again later.</p>}
 
-            <p className="mt-6 text-xs text-white/60">
-              Currency auto-detect uses browser locale. (Prod: geo-IP + live FX.)
-              <span className="text-white/60"> BTC is display-only — checkout coming soon.</span>
-            </p>
+            <p className="mt-6 text-xs text-white/40">BTC display-only — checkout coming soon.</p>
           </div>
 
           <div className="mx-auto mt-8 grid gap-3 md:grid-cols-2">
@@ -269,14 +266,14 @@ export default function BossMinutePostHog() {
       <footer className="border-t border-white/10 bg-black py-8">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 px-6 md:flex-row">
           <p className="text-white/60">© {new Date().getFullYear()} The Boss Minute — All Rights Reserved</p>
-          
-                    <div className="flex items-center gap-6 text-white/60">
-          <a href="/privacy.html" className="hover:text-white">Privacy</a>
-          <a href="/terms.html" className="hover:text-white">Terms</a>
-          <a href="/contact.html" className="hover:text-white">Contact</a>
-          <a href="/affiliates.html" className="hover:text-white">Affiliates</a>
+          <div className="flex items-center gap-6 text-white/60">
+            <a href="/privacy.html" className="hover:text-white">Privacy</a>
+            <a href="/terms.html" className="hover:text-white">Terms</a>
+            <a href="/refunds.html" className="hover:text-white">Refunds</a>
+            <a href="/contact.html" className="hover:text-white">Contact</a>
+            <a href="/affiliates.html" className="hover:text-white">Affiliates</a>
+          </div>
         </div>
-      </div>
       <p className="mt-2 text-center text-xs text-white/60">
         The Boss Minute is an educational and professional development service
         designed for executives and leaders of organizations. It is not therapy,
